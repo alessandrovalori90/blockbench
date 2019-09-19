@@ -75,7 +75,7 @@ Go to [micro](src/micro) directory and use `npm install` to install the dependen
 	+ ssh-keygen -b 4096 (Note: leave the password blank. This command will create a public and private key inside the hidden folder /home/your_username/.ssh)
 	+ copy the public key and rename the copy as: "authorized_keys"
 
-##Differences with original repository
+## Differences with original repository
 * added --allow-insecure-unlock option for geth unlock account
 * modified genesis blocks for ethereum
 * modified Json-RPC calls in the client
