@@ -56,3 +56,30 @@ Go to [micro](src/micro) directory and use `npm install` to install the dependen
 * [geth(parity)](https://github.com/paritytech/parity/wiki/Setup)
 * [geth(quorum)](https://github.com/jpmorganchase/quorum/wiki/Getting-Set-Up)
 * [hyperledger](https://github.com/hyperledger/fabric/tree/v0.6)
+
+## Install
+* dependencies for restclient-cpp:
+	+ sudo apt-get install build-essential
+	+ sudo apt-get install libtool
+	+ sudo apt-get install autoconf
+	+ sudo apt-get install libcurl4-gnutls-dev
+* restclient-cpp needed to compile the client:
+	+ git clone https://github.com/mrtazz/restclient-cpp.git
+	+ cd restclient-cpp/ && ./autogen.sh && ./configure && sudo make install
+* blockbench:
+	+ git clone https://github.com/alessandrovalori90/blockbench
+	+ cd blockbench/src/macro/kvstore/
+	+ make
+* ssh for linux scripts:
+	+ sudo apt-get install openssh-server (allows ssh clients to connect to you)
+	+ ssh-keygen -b 4096 (Note: leave the password blank. This command will create a public and private key inside the hidden folder /home/your_username/.ssh)
+	+ copy the public key and rename the copy as: "authorized_keys"
+
+##Differences with original repository
+* added --allow-insecure-unlock option for geth unlock account
+* modified genesis blocks for ethereum
+* modified Json-RPC calls in the client
+* using fixed account for ethereum for testing
+* Note: use at least 2 cores and 4Gb of ram or the -wt of the client needs to be greatly increased.
+
+

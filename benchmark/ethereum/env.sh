@@ -2,7 +2,7 @@ ETH_HOME=/home/$USER/blockbench/benchmark/ethereum
 HOSTS=$ETH_HOME/hosts
 CLIENTS=$ETH_HOME/clients
 ETH_DATA=/home/$USER/eth
-LOG_DIR=$ETH_HOME/kvstore1
+LOG_DIR=$ETH_HOME/kvstore
 EXE_HOME=/home/$USER/blockbench/src/macro/kvstore
 BENCHMARK=ycsb
 # private key that should be used to create an account as ethereum coinbase
