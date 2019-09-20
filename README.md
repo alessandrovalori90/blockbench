@@ -66,6 +66,7 @@ Go to [micro](src/micro) directory and use `npm install` to install the dependen
 * restclient-cpp needed to compile the client:
 	+ git clone https://github.com/mrtazz/restclient-cpp.git
 	+ cd restclient-cpp/ && ./autogen.sh && ./configure && sudo make install
+	+ if error: `./driver: error while loading shared libraries: librestclient-cpp.so.1: cannot open shared object file: No such file or directory` add restclient-ccp path to LD_LIBRARY_PATH as fallows: `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/`, to check the path of the library do a make install and is displayed at the end.
 * blockbench:
 	+ git clone https://github.com/alessandrovalori90/blockbench
 	+ cd blockbench/src/macro/kvstore/
@@ -80,6 +81,7 @@ Go to [micro](src/micro) directory and use `npm install` to install the dependen
 * modified genesis blocks for ethereum
 * modified Json-RPC calls in the client
 * using fixed account for ethereum for testing
-* Note: use at least 2 cores and 4Gb of ram or the -wt of the client needs to be greatly increased.
+* Note: use at least 2 cores and 4Gb of ram or the -wt of the client needs to be greatly increased
+* addpeers mechanism changed
 
 
