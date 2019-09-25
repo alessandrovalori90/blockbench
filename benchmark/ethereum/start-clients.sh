@@ -1,5 +1,5 @@
 #!/bin/bash
-# args=THREADS index N txrate
+# <nthreads> <client_index> <nservers> <txrate>
 echo IN START_CLIENTS $1 $2 $3 $4
 
 cd `dirname ${BASH_SOURCE-$0}`

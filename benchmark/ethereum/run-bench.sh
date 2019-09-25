@@ -1,5 +1,5 @@
 #!/bin/bash
-#arg num_nodes #num_threads num_clients tx_rate [-drop]
+#arg <num_nodes> <num_threads> <num_clients> <tx_rate> [-drop]
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 

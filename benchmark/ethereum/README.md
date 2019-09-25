@@ -69,7 +69,7 @@ blockchain after mining few dozen of blocks. After tuning, the following during 
 
 ### Starting the clients
 + `start-multi-clients.sh <nclients> <nservers> <nthreads> [-drop]`: takes as input a number of clients and
-launch `2.nclients` clients connecting to `2.nclients` miners. It then performs the following:
+launch `2.nclients` clients connecting to `2.nclients` miners(if `nclients` more then `nservers` only `nservers` are created, to have more clients then servers play with threads). It then performs the following:
     1. Go to each client node in `clients` and invoke `start-client.sh` 
         + `start-client.sh <nthreads> <client_index> <nservers>`: start `driver` process at the client node
        `client_index^{th}` to connect to the server node of index `2.(client_index)` and `2.(client_index)+1`

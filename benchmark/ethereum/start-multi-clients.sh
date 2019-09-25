@@ -1,5 +1,5 @@
 #!/bin/bash
-#num_clients num_nodes threads tx_rate [-drop]
+#<num_clients> <num_nodes> <threads> <tx_rate> [-drop]
 cd `dirname ${BASH_SOURCE-$0}`
 . env.sh
 
@@ -8,8 +8,7 @@ let IDX=$1/2
 for client in `cat $CLIENTS`; do
   if [[ $i -lt $IDX ]]; then
     echo $client index $i
-#  ssh -oStrictHostKeyChecking=no $client 'cd /users/dinhtta/blockchain-perf/ethereum ; ./start-clients.sh '$3 $i $2
-    ssh -oStrictHostKeyChecking=no $client $ETH_HOME/start-clients.sh $3 $i $2 $4
+    ssh -oStrictHostKeyChecking=no $USER@$client $ETH_HOME/start-clients.sh $3 $i $2 $4
   fi
   let i=$i+1
 done
@@ -22,7 +21,7 @@ if [[ $5 == "-drop" ]]; then
   let i=0
   for server in `cat $HOSTS`; do
     if [[ $i -ge $idx ]]; then
-      ssh -oStrictHostKeyChecking=no $server killall -KILL geth peer java 
+      ssh -oStrictHostKeyChecking=no $USER@$server killall -KILL geth peer java 
       echo "Dropped "$server
     fi
     let i=$i+1
@@ -30,15 +29,15 @@ if [[ $5 == "-drop" ]]; then
   sleep $SR
   for client in `cat $CLIENTS`; do
     echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
+    ssh -oStrictHostKeyChecking=no $USER@$client 'killall -KILL driver' 
     let i=$i+1
   done
 else
   let M=$2*10+240
+  echo sleeping $M seconds
   sleep $M
   for client in `cat $CLIENTS`; do
-    echo $client index $i
-    ssh -oStrictHostKeyChecking=no $client 'killall -KILL driver' 
-    let i=$i+1
+    echo killing $client
+    ssh -oStrictHostKeyChecking=no $USER@$client 'killall -KILL driver' 
   done
 fi
