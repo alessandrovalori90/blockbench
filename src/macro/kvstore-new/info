@@ -1,0 +1,14 @@
+------------ycsb
+- DelegateClient() = the main calls the insertion and transaction phases with this method.
+------------core/client
+- Doinsert() = ycsb.DelegateClient uses this method for the insertion phase.
+- Dotransaction() = ycsb.DelegateClient uses this method for the transaction phase.
+------------core/core_workload
+- BuildValues() = 
+- BuildUpdate() = 
+
+---distributions
+request_dist = specified in the workloadfile as "requestdistribution". distributions of read and updates.
+scan_len_dist = specified in the workloadfile as "scanlengthdistribution". Not used (only in Client::TransactionScan that calls an interface not a real function).
+field_len_dist = specified in the workloadfile as "field_len_dist" used in both "BuildValues" and "BuildUpdate"
+
