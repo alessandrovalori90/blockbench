@@ -4,9 +4,9 @@ CLIENTS=$ETH_HOME/clients
 ETH_DATA=/home/$USER/eth
 #LOG_DIR=$ETH_HOME/kvstore
 #EXE_HOME=/home/$USER/blockbench/src/macro/kvstore
-#BENCHMARK=ycsb
+BENCHMARK=smallbank
 LOG_DIR=$ETH_HOME/smallbank
-EXE_HOME=/home/$USER/blockbench/src/macro/kvstore
+EXE_HOME=/home/$USER/blockbench/src/macro/smallbank
 BENCHMARK=ycsb
 
 # private key that should be used to create an account as ethereum coinbase
